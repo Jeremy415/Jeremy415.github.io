@@ -662,7 +662,7 @@ window.PROFILE = {
       topics: ['React', 'TypeScript', 'Hono', 'SQLite', 'AI', 'Docker']
     },
 
-    'guian': {
+    'guanlan': {
       private: true,
       language: 'TypeScript',
       highlight: true,
