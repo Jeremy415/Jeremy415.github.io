@@ -299,12 +299,21 @@
       // 没写 detail 的项目：退回用卡片上的要点，保证详情页永远不为空
       var fallback = (f.points || []).map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('');
 
+      // 详情页顶部的跳转按钮（GitHub / 演示 / 文档），没有配置就不渲染
+      var linkBtns = (f.links || []).map(function (l) {
+        var isPrimary = l.type === 'demo' || l.type === 'github';
+        return '<a class="btn ' + (isPrimary ? 'btn-primary' : 'btn-ghost') + '" href="' + esc(l.url) +
+               '" target="_blank" rel="noopener">' + icon(l.type === 'github' ? 'github' : (l.type === 'doc' ? 'doc' : 'demo')) +
+               esc(l.label || '查看') + '</a>';
+      }).join('');
+
       return '' +
         '<header class="pm-head">' +
           (f.en ? '<span class="pm-en">' + esc(f.en) + '</span>' : '') +
           '<h3 class="pm-title" id="pmTitle">' + esc(f.name) + '</h3>' +
           (f.badge ? '<span class="pm-badge ' + esc(f.accent || 'sky') + '">' + esc(f.badge) + '</span>' : '') +
           (f.tagline ? '<p class="pm-tagline">' + esc(f.tagline) + '</p>' : '') +
+          (linkBtns ? '<div class="pm-links">' + linkBtns + '</div>' : '') +
         '</header>' +
         (meta ? '<div class="pm-meta">' + meta + '</div>' : '') +
         (d.background
