@@ -197,7 +197,7 @@
   if (statsBox) {
     statDefs.forEach(function (s) {
       var d = el('div', 'stat');
-      d.innerHTML = '<div class="stat-num" data-key="' + s.key + '">0</div>' +
+      d.innerHTML = '<div class="stat-num" data-key="' + s.key + '">' + s.num + '</div>' +
                     '<div class="stat-label">' + esc(s.label) + '</div>';
       statsBox.appendChild(d);
     });
