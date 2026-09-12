@@ -533,8 +533,9 @@ svg.fill { fill: currentColor; stroke: none; }
 .hero-side { display: flex; flex-direction: column; align-items: center; gap: 22px; }
 .hero-avatar-wrap {
   position: relative;
-  width: 152px;
-  aspect-ratio: 5 / 7;
+  width: 160px;
+  aspect-ratio: 1287 / 1839;
+  margin-inline: auto;
   border-radius: 10px;
   padding: 4px;
   background: linear-gradient(135deg, #6366f1, #06b6d4);
@@ -545,8 +546,8 @@ svg.fill { fill: currentColor; stroke: none; }
   display: block;
   width: 100%; height: 100%;
   border-radius: 7px;
-  object-fit: cover;
-  object-position: center 22%;
+  object-fit: contain;
+  object-position: center top;
   background: var(--surface-2);
   border: 2px solid var(--bg);
 }
